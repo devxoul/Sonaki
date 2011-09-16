@@ -32,17 +32,20 @@ enum {
 {
     if(self = [super init])
     {
-//        CCSprite *bg = [CCSprite spriteWithFile:@"menu_bg.png"];
-//        bg.anchorPoint = ccp(0, 0);
-//        [bg setPosition:ccp(0, 0)];
-//        [self addChild:bg z:kTagBackground tag:kTagBackground];
+        CCSprite *bg = [CCSprite spriteWithFile:@"menu_bg.png"];
+        bg.anchorPoint = ccp(0, 0);
+        [bg setPosition:ccp(0, 0)];
+        [self addChild:bg z:kTagBackground tag:kTagBackground];
         
         CCMenuItemImage *playMenuItem = [CCMenuItemImage itemFromNormalImage:@"play_button_normal.png" selectedImage:@"play_button_selected.png" target:self selector:@selector(playMenuItemCallback:)];
         CCMenuItemImage *helpMenuItem = [CCMenuItemImage itemFromNormalImage:@"help_button_normal.png" selectedImage:@"help_button_selected.png" target:self selector:@selector(helpMenuItemCallback:)];
         CCMenuItemImage *rankingMenuItem = [CCMenuItemImage itemFromNormalImage:@"ranking_button_normal.png" selectedImage:@"ranking_button_selected.png" target:self selector:@selector(rankingMenuItemCallback:)];
         
+        [playMenuItem setPosition:ccp(-60, -30)];
+        [helpMenuItem setPosition:ccp(60, -105)];
+        [rankingMenuItem setPosition:ccp(-50, -175)];
+        
         CCMenu *menu = [CCMenu menuWithItems:playMenuItem, helpMenuItem, rankingMenuItem, nil];
-        [menu alignItemsVertically];
         [self addChild:menu];
     }
     return self;
@@ -50,7 +53,15 @@ enum {
 
 - (void) playMenuItemCallback: (id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+    CCCallFunc *onPlayMenuItemActionEnd = [CCCallFunc actionWithTarget:self selector:@selector(onPlayMenuItemActionEnd:)];
+    CCEaseInOut *action = [CCEaseInOut actionWithAction:[CCMoveTo actionWithDuration:0.6 position:ccp(0, -395)] rate:2];
+    [self runAction:[CCSequence actions:action, onPlayMenuItemActionEnd, nil]];
+    [action retain];
+}
+
+- (void) onPlayMenuItemActionEnd: (id)sender
+{
+    [[CCDirector sharedDirector] pushScene:[GameLayer scene]];
 }
 
 - (void) helpMenuItemCallback: (id)sender
@@ -61,6 +72,14 @@ enum {
 - (void) rankingMenuItemCallback: (id)sender
 {
     
+}
+
+- (void) onEnter
+{
+    [super onEnter];
+    [[CCDirector sharedDirector] resume];
+    CCAction *action = [CCEaseInOut actionWithAction:[CCMoveTo actionWithDuration:0.6 position:ccp(0, 0)] rate:2];
+    [self runAction:action];
 }
 
 @end

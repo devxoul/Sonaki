@@ -16,7 +16,7 @@
 - (BOOL) hitTest:(CCSprite *)character
 {
     CGRect charBox = character.boundingBox;
-    return CGRectIntersectsRect(CGRectMake(charBox.origin.x + 2, charBox.origin.y + 10, charBox.size.width - 4, charBox.size.height - 10), self.boundingBox);
+    return CGRectIntersectsRect(CGRectMake(charBox.origin.x + 2, charBox.origin.y + 10, charBox.size.width - 4, charBox.size.height - 15), self.boundingBox);
 }
 
 @end

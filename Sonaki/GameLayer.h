@@ -9,13 +9,41 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "Rain.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
+@interface GameLayer : CCLayer
 {
+    int direction;
+    int lastDirection;
+    float speed;
+    
+    CCSprite *character;
+    NSMutableArray *rains;
+    
+    float rainInterval;
+    
+    CGSize winSize;
+    
+    float cloudX;
+    float cloudY;
+    int cloudWidth;
+    
+    CCLabelTTF *scoreLabel;
+    int score;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
++ (CCScene *) scene;
+
+- (void) createBackground;
+- (void) createCharacter;
+- (void) createCloud;
+- (void) createScoreLabel;
+
+- (void) removeRain:(Rain *)rain;
+
+- (void) move;
+- (void) updateScore;
 
 @end

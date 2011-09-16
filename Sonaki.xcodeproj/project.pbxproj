@@ -122,6 +122,7 @@
 		0372499114173C9C006CE1D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0372499014173C9C006CE1D6 /* AppDelegate.m */; };
 		0372499414173C9C006CE1D6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0372499314173C9C006CE1D6 /* RootViewController.m */; };
 		0372499714173C9C006CE1D6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0372499614173C9C006CE1D6 /* GameLayer.m */; };
+		0393B201141F63E20082EBBF /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0393B200141F63E20082EBBF /* menu_bg.png */; };
 		03ABD40A14173E7200D8BDB6 /* Rain.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ABD40914173E7200D8BDB6 /* Rain.m */; };
 		03ABD40D1417404A00D8BDB6 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ABD40C1417404A00D8BDB6 /* MenuLayer.m */; };
 		03ABD4161417420100D8BDB6 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ABD40E1417420100D8BDB6 /* cloud.png */; };
@@ -370,6 +371,7 @@
 		0372499514173C9C006CE1D6 /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		0372499614173C9C006CE1D6 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		0372499814173C9C006CE1D6 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		0393B200141F63E20082EBBF /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_bg.png; path = Resources/menu_bg.png; sourceTree = "<group>"; };
 		03ABD40814173E7200D8BDB6 /* Rain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rain.h; sourceTree = "<group>"; };
 		03ABD40914173E7200D8BDB6 /* Rain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rain.m; sourceTree = "<group>"; };
 		03ABD40B1417404A00D8BDB6 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				03ABD4111417420100D8BDB6 /* help_button_selected.png */,
 				03ABD4121417420100D8BDB6 /* play_button_normal.png */,
 				03ABD4131417420100D8BDB6 /* play_button_selected.png */,
+				0393B200141F63E20082EBBF /* menu_bg.png */,
 				03ABD4141417420100D8BDB6 /* ranking_button_normal.png */,
 				03ABD4151417420100D8BDB6 /* ranking_button_selected.png */,
 				0372483F14173C9A006CE1D6 /* Default.png */,
@@ -859,6 +862,7 @@
 				03ABD41B1417420100D8BDB6 /* play_button_selected.png in Resources */,
 				03ABD41C1417420100D8BDB6 /* ranking_button_normal.png in Resources */,
 				03ABD41D1417420100D8BDB6 /* ranking_button_selected.png in Resources */,
+				0393B201141F63E20082EBBF /* menu_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
